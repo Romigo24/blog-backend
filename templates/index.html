@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container box_1620">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            <a class="navbar-brand logo_h" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -29,10 +29,10 @@
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right navbar-social">
-                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-                <li><a href="#"><i class="ti-instagram"></i></a></li>
-                <li><a href="#"><i class="ti-skype"></i></a></li>
+                <li><a href="https://www.facebook.com"><i class="ti-facebook"></i></a></li>
+                <li><a href="https://x.com/?mx=2"><i class="ti-twitter-alt"></i></a></li>
+                <li><a href="https://www.instagram.com"><i class="ti-instagram"></i></a></li>
+                <li><a href="https://www.skype.com/ru/"><i class="ti-skype"></i></a></li>
               </ul>
             </div> 
           </div>
@@ -71,7 +71,7 @@
                   {% endif %}
                 </div>
                 <div class="blog__slide__content">
-                  <h3><a href="#">{{ post.title }}</a></h3>
+                  <h3><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h3>
                   <p>{{ post.published_at }} </p>
                 </div>
               </div>
@@ -104,7 +104,7 @@
                 <div class="details mt-20">
                   <h3>{{ post.title }}</h3>
                   <p>{{ post.text|truncatechars:200 }}</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                  <a class="button" href="{% url 'post_detail' slug=post.slug %}">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
             {% endfor %}
@@ -208,16 +208,16 @@
               <h6>Follow Us</h6>
               <p>Let us be social</p>
               <div class="footer-social d-flex align-items-center">
-                <a href="#">
+                <a href="https://www.facebook.com">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#">
+                <a href="https://x.com/?mx=2">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a href="#">
+                <a href="https://dribbble.com">
                   <i class="fab fa-dribbble"></i>
                 </a>
-                <a href="#">
+                <a href="https://www.behance.net">
                   <i class="fab fa-behance"></i>
                 </a>
               </div>
